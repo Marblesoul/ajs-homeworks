@@ -4,12 +4,16 @@ describe('Magician', () => {
   test('should create Magician with valid name', () => {
     const magician = new Magician('Gandalf');
 
-    expect(magician.name).toBe('Gandalf');
-    expect(magician.type).toBe('Magician');
-    expect(magician.health).toBe(100);
-    expect(magician.level).toBe(1);
-    expect(magician.attack).toBe(10);
-    expect(magician.defence).toBe(40);
+    const expected = {
+      name: 'Gandalf',
+      type: 'Magician',
+      health: 100,
+      level: 1,
+      attack: 10,
+      defence: 40,
+    };
+
+    expect(magician).toEqual(expected);
   });
 
   test('should throw error with invalid name', () => {

@@ -4,12 +4,16 @@ describe('Undead', () => {
   test('should create Undead with valid name', () => {
     const undead = new Undead('Skeleton');
 
-    expect(undead.name).toBe('Skeleton');
-    expect(undead.type).toBe('Undead');
-    expect(undead.health).toBe(100);
-    expect(undead.level).toBe(1);
-    expect(undead.attack).toBe(25);
-    expect(undead.defence).toBe(25);
+    const expected = {
+      name: 'Skeleton',
+      type: 'Undead',
+      health: 100,
+      level: 1,
+      attack: 25,
+      defence: 25,
+    };
+
+    expect(undead).toEqual(expected);
   });
 
   test('should throw error with invalid name', () => {

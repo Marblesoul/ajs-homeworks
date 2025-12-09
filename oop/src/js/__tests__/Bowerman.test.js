@@ -4,12 +4,16 @@ describe('Bowerman', () => {
   test('should create Bowerman with valid name', () => {
     const bowerman = new Bowerman('Robin');
 
-    expect(bowerman.name).toBe('Robin');
-    expect(bowerman.type).toBe('Bowman');
-    expect(bowerman.health).toBe(100);
-    expect(bowerman.level).toBe(1);
-    expect(bowerman.attack).toBe(25);
-    expect(bowerman.defence).toBe(25);
+    const expected = {
+      name: 'Robin',
+      type: 'Bowman',
+      health: 100,
+      level: 1,
+      attack: 25,
+      defence: 25,
+    };
+
+    expect(bowerman).toEqual(expected);
   });
 
   test('should throw error with invalid name', () => {

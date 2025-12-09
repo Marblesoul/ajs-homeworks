@@ -4,12 +4,16 @@ describe('Daemon', () => {
   test('should create Daemon with valid name', () => {
     const daemon = new Daemon('Diablo');
 
-    expect(daemon.name).toBe('Diablo');
-    expect(daemon.type).toBe('Daemon');
-    expect(daemon.health).toBe(100);
-    expect(daemon.level).toBe(1);
-    expect(daemon.attack).toBe(10);
-    expect(daemon.defence).toBe(40);
+    const expected = {
+      name: 'Diablo',
+      type: 'Daemon',
+      health: 100,
+      level: 1,
+      attack: 10,
+      defence: 40,
+    };
+
+    expect(daemon).toEqual(expected);
   });
 
   test('should throw error with invalid name', () => {

@@ -4,12 +4,16 @@ describe('Zombie', () => {
   test('should create Zombie with valid name', () => {
     const zombie = new Zombie('Walker');
 
-    expect(zombie.name).toBe('Walker');
-    expect(zombie.type).toBe('Zombie');
-    expect(zombie.health).toBe(100);
-    expect(zombie.level).toBe(1);
-    expect(zombie.attack).toBe(40);
-    expect(zombie.defence).toBe(10);
+    const expected = {
+      name: 'Walker',
+      type: 'Zombie',
+      health: 100,
+      level: 1,
+      attack: 40,
+      defence: 10,
+    };
+
+    expect(zombie).toEqual(expected);
   });
 
   test('should throw error with invalid name', () => {
